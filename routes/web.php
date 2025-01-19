@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Wildcard route for fallback
+ */
+Route::view('/{any}', 'welcome')->where('any', '.*');
